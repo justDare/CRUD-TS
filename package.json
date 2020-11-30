@@ -1,0 +1,31 @@
+{
+  "name": "plex-employees",
+  "version": "0.1.0",
+  "license": "None provided",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^4.11.1",
+    "concurrently": "^3.6.0",
+    "cors": "^2.8.4",
+    "dotenv": "^8.2.0",
+    "express": "^4.16.3",
+    "knex": "^0.21.12",
+    "nodemon": "^1.17.5",
+    "pg": "^8.5.1"
+  },
+  "scripts": {
+    "start": "concurrently --kill-others \"nodemon -r tsconfig-paths/register server/index.ts\" \"npm run client\"",
+    "client": "npm start --prefix client",
+    "postinstall": "cd client && npm install && cd ..",
+    "custom:build": "nodemon src/scripts/build.js --watch src/data --ext .md",
+    "custom:start": "concurrently --kill-others \"npm run custom:build\" \"npm run start\""
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.8",
+    "@types/express": "^4.17.9",
+    "@types/node": "^14.14.10",
+    "ts-node": "^9.0.0",
+    "tsconfig-paths": "^3.9.0",
+    "typescript": "^4.1.2"
+  }
+}

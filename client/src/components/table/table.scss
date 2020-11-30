@@ -1,0 +1,9 @@
+.custom-table {
+  .MuiTableRow-root:not(.MuiTableRow-head) {
+    cursor: pointer;
+
+    &:hover {
+      background-color: #3f51b53b;
+    }
+  }
+}
