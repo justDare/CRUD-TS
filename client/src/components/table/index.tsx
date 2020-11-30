@@ -52,9 +52,8 @@ const Table: React.FC<Props> = ({ columns, data }) => {
                 onClick={() => handleRowClick(row)}
               >
                 {row.cells.map((cell) => {
-                  console.log(cell);
                   cell.value = cell.value.toString();
-                  console.log(cell);
+
                   return (
                     <TableCell {...cell.getCellProps()}>{cell.value}</TableCell>
                   );
